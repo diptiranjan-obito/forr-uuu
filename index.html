@@ -1,0 +1,1971 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>My Constellation With A Golden Heartt ✦</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;0,600;1,400&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --g:#f3c969;
+  --l:#b9a6ff;
+  --p:#7b5cff;
+  --k:#ffb6d5;
+  --t:#f1ecff
+}
+
+*{
+  box-sizing:border-box;
+  margin:0
+}
+
+[hidden]{
+  display:none!important
+}
+
+html{
+  scroll-behavior:smooth
+}
+
+body{
+  background:#05060f;
+  color:var(--t);
+  font:400 1.18rem/1.7 'Cormorant Garamond',Georgia,serif;
+  overflow-x:hidden
+}
+
+body:before{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:0;
+  pointer-events:none;
+  background:
+    radial-gradient(60% 40% at 15% 10%,rgba(123,92,255,.22),transparent),
+    radial-gradient(50% 40% at 90% 60%,rgba(255,182,213,.1),transparent),
+    radial-gradient(70% 50% at 50% 100%,rgba(185,166,255,.14),transparent)
+}
+
+#bg{
+  position:fixed;
+  inset:0;
+  z-index:0;
+  pointer-events:none
+}
+
+#cur{
+  position:fixed;
+  width:200px;
+  height:200px;
+  margin:-100px;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(243,201,105,.13),transparent 65%);
+  pointer-events:none;
+  z-index:2;
+  display:none
+}
+
+.cap{
+  font-weight:600;
+  font-size:.72rem;
+  letter-spacing:.38em;
+  text-transform:uppercase;
+  color:var(--g)
+}
+
+.hw{
+  font-family:Caveat,cursive;
+  font-size:1.5rem;
+  color:var(--k)
+}
+
+h1{
+  font-weight:300;
+  font-size:clamp(2.3rem,10vw,4.6rem);
+  line-height:1.05;
+  letter-spacing:.03em;
+  background:linear-gradient(120deg,#fff,var(--g) 55%,var(--k));
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent
+}
+
+h2{
+  font-weight:300;
+  font-size:clamp(1.7rem,7vw,2.5rem);
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  line-height:1.2
+}
+
+.gl{
+  background:rgba(255,255,255,.06);
+  -webkit-backdrop-filter:blur(14px);
+  backdrop-filter:blur(14px);
+  border:1px solid rgba(243,201,105,.22);
+  border-radius:20px;
+  padding:1rem 1.2rem;
+  box-shadow:0 10px 40px rgba(123,92,255,.18)
+}
+
+button{
+  font:inherit;
+  color:inherit
+}
+
+:focus-visible{
+  outline:2px solid var(--g);
+  outline-offset:3px
+}
+
+.btn{
+  background:rgba(243,201,105,.1);
+  border:1px solid var(--g);
+  color:var(--g);
+  border-radius:99px;
+  padding:.7rem 2rem;
+  letter-spacing:.35em;
+  font-weight:600;
+  font-size:.85rem;
+  cursor:pointer;
+  transition:.4s
+}
+
+.btn:hover{
+  background:var(--g);
+  color:#1a1033;
+  box-shadow:0 0 30px rgba(243,201,105,.5)
+}
+
+.ov{
+  position:fixed;
+  inset:0;
+  z-index:30;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:1.2rem;
+  text-align:center;
+  padding:2rem;
+  background:rgba(5,6,15,.6);
+  transition:opacity 1s,visibility 1s
+}
+
+.ov.out{
+  opacity:0;
+  visibility:hidden
+}
+
+#pw{
+  font:inherit;
+  text-align:center;
+  letter-spacing:.2em;
+  padding:.7rem 1rem;
+  width:min(280px,80vw);
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(185,166,255,.4);
+  border-radius:99px;
+  color:var(--t)
+}
+
+#er{
+  min-height:1.4em;
+  color:var(--k);
+  font-style:italic
+}
+
+.shake{
+  animation:sk .4s
+}
+
+@keyframes sk{
+  25%{transform:translateX(-8px)}
+  75%{transform:translateX(8px)}
+}
+
+#intro p{
+  font-style:italic;
+  font-size:1.25rem;
+  color:#d9d0ff
+}
+
+#pg{
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  z-index:20;
+  padding:calc(env(safe-area-inset-top) + .6rem) 1rem .9rem;
+  text-align:center;
+  opacity:0;
+  transition:opacity 1s;
+  pointer-events:none;
+  background:linear-gradient(#05060fdd,transparent)
+}
+
+#pg.on{
+  opacity:1
+}
+
+#tk{
+  display:flex;
+  gap:4px;
+  justify-content:center;
+  margin-top:.4rem
+}
+
+#tk i{
+  width:20px;
+  height:2px;
+  background:rgba(255,255,255,.18);
+  transition:.5s
+}
+
+#tk i.a{
+  background:var(--g);
+  box-shadow:0 0 6px var(--g)
+}
+
+.ch{
+  position:relative;
+  z-index:1;
+  min-height:100svh;
+  max-width:640px;
+  margin:auto;
+  padding:6rem 1.4rem 4rem;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  gap:1.2rem
+}
+
+.ch p{
+  color:#e4dcff
+}
+
+.big{
+  font-size:1.5rem;
+  font-style:italic;
+  color:#fff
+}
+
+.rv{
+  opacity:0;
+  transform:translateY(18px);
+  filter:blur(6px);
+  transition:opacity 1.5s,transform 1.5s,filter 1.5s
+}
+
+.rv.in{
+  opacity:1;
+  transform:none;
+  filter:none
+}
+
+.more{
+  align-self:center;
+  margin-top:1.5rem;
+  background:none;
+  border:0;
+  color:var(--g);
+  font-weight:600;
+  font-size:.7rem;
+  letter-spacing:.35em;
+  text-transform:uppercase;
+  cursor:pointer;
+  opacity:.8;
+  animation:bob 2.6s ease-in-out infinite
+}
+
+@keyframes bob{
+  50%{transform:translateY(7px)}
+}
+
+.gc{
+  display:block;
+  width:100%;
+  text-align:left;
+  cursor:pointer
+}
+
+.gc b{
+  font-weight:500;
+  font-size:1.25rem;
+  color:var(--g)
+}
+
+.gc b:after{
+  content:" ✦";
+  font-size:.8rem;
+  color:var(--k)
+}
+
+.gc span{
+  display:block;
+  max-height:0;
+  overflow:hidden;
+  opacity:0;
+  transition:max-height .9s,opacity .9s,margin .9s
+}
+
+.gc.open span{
+  max-height:220px;
+  opacity:1;
+  margin-top:.5rem
+}
+
+svg text{
+  fill:var(--t);
+  font:.55rem 'Cormorant Garamond',serif;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+  text-anchor:middle;
+  opacity:.7
+}
+
+.orb{
+  transform-origin:100px 70px;
+  animation:rot 70s linear infinite
+}
+
+@keyframes rot{
+  to{transform:rotate(360deg)}
+}
+
+.pu{
+  animation:pu 3s ease-in-out infinite;
+  filter:drop-shadow(0 0 8px var(--g))
+}
+
+@keyframes pu{
+  50%{opacity:.55}
+}
+
+.sky{
+  width:100%;
+  touch-action:manipulation
+}
+
+.ln{
+  stroke:rgba(185,166,255,.22);
+  stroke-width:.7;
+  transition:.8s
+}
+
+.ln.on{
+  stroke:var(--g);
+  filter:drop-shadow(0 0 3px var(--g))
+}
+
+.st{
+  cursor:pointer
+}
+
+.sd{
+  fill:var(--l);
+  filter:drop-shadow(0 0 4px var(--l));
+  transition:.6s;
+  animation:pu 4s ease-in-out infinite
+}
+
+.st.lit .sd{
+  fill:var(--g);
+  filter:drop-shadow(0 0 8px var(--g));
+  animation:none
+}
+
+.card{
+  min-height:9.5rem;
+  transition:opacity .5s
+}
+
+.card h3{
+  font-weight:500;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  color:var(--g);
+  font-size:1.1rem;
+  margin-bottom:.4rem
+}
+
+.card small{
+  color:var(--l);
+  letter-spacing:.2em
+}
+
+.mir{
+  position:relative;
+  overflow:hidden;
+  text-align:center;
+  padding:2.2rem 1.2rem;
+  border:1px solid rgba(185,166,255,.45);
+  box-shadow:
+    inset 0 0 60px rgba(185,166,255,.12),
+    0 0 50px rgba(123,92,255,.2);
+  border-radius:120px 120px 24px 24px
+}
+
+.mir:after{
+  content:"";
+  position:absolute;
+  inset:-50%;
+  pointer-events:none;
+  background:linear-gradient(
+    105deg,
+    transparent 42%,
+    rgba(255,255,255,.11) 50%,
+    transparent 58%
+  );
+  animation:sh 8s linear infinite
+}
+
+@keyframes sh{
+  from{transform:translateX(-30%)}
+  to{transform:translateX(30%)}
+}
+
+.mi{
+  font-style:italic;
+  font-size:1.35rem;
+  color:var(--k);
+  margin:.9rem 0
+}
+
+.lt button{
+  all:unset;
+  display:flex;
+  gap:.9rem;
+  align-items:center;
+  cursor:pointer;
+  width:100%;
+  font-size:1.1rem
+}
+
+.lt button:focus-visible{
+  outline:2px solid var(--g)
+}
+
+.lt i{
+  flex:none;
+  width:36px;
+  height:36px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  font-style:normal;
+  color:#3a2a00;
+  background:radial-gradient(circle at 35% 30%,#ffe9a8,#c99a2e);
+  transition:.8s
+}
+
+.lt.open i{
+  box-shadow:0 0 22px var(--g);
+  transform:rotate(180deg)
+}
+
+.lt p{
+  max-height:0;
+  overflow:hidden;
+  opacity:0;
+  font-style:italic;
+  transition:max-height 1s,opacity 1.2s,margin 1s
+}
+
+.lt.open p{
+  max-height:340px;
+  opacity:1;
+  margin-top:.9rem
+}
+
+/* =====================================================
+   SHAYARI CHAPTER
+   ===================================================== */
+
+.shayari-card{
+  position:relative;
+  overflow:hidden;
+  text-align:center;
+  padding:1.8rem 1.25rem 1.5rem;
+  border:1px solid rgba(243,201,105,.24);
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(123,92,255,.13),
+      transparent 65%
+    ),
+    rgba(255,255,255,.045);
+  box-shadow:
+    inset 0 0 45px rgba(123,92,255,.08),
+    0 12px 40px rgba(5,3,20,.35);
+  transition:
+    transform .7s ease,
+    border-color .7s ease,
+    box-shadow .7s ease
+}
+
+.shayari-card:before{
+  content:"";
+  position:absolute;
+  width:120px;
+  height:120px;
+  top:-70px;
+  left:50%;
+  transform:translateX(-50%);
+  border-radius:50%;
+  background:rgba(243,201,105,.09);
+  filter:blur(20px);
+  pointer-events:none
+}
+
+.shayari-card:hover{
+  transform:translateY(-4px);
+  border-color:rgba(243,201,105,.5);
+  box-shadow:
+    inset 0 0 55px rgba(123,92,255,.12),
+    0 15px 50px rgba(123,92,255,.2)
+}
+
+.shayari-star{
+  position:relative;
+  color:var(--g);
+  font-size:1.2rem;
+  line-height:1;
+  text-shadow:0 0 14px rgba(243,201,105,.7);
+  margin-bottom:.7rem;
+  animation:shayariGlow 3s ease-in-out infinite
+}
+
+@keyframes shayariGlow{
+  50%{
+    text-shadow:
+      0 0 24px rgba(243,201,105,.9),
+      0 0 45px rgba(123,92,255,.35);
+    transform:scale(1.08)
+  }
+}
+
+.shayari-number{
+  font-size:.62rem;
+  letter-spacing:.35em;
+  color:var(--l);
+  opacity:.65;
+  margin-bottom:.9rem
+}
+
+.shayari-card p{
+  position:relative;
+  color:#eee8ff;
+  font-size:1.18rem;
+  line-height:1.9;
+  font-style:italic;
+  text-shadow:0 1px 12px rgba(0,0,0,.25)
+}
+
+.shayari-line{
+  margin-top:1rem;
+  color:var(--k);
+  font-size:.7rem;
+  letter-spacing:.6em;
+  opacity:.7
+}
+
+#c7 .more{
+  margin-top:2rem
+}
+
+#c8{
+  text-align:center;
+  align-items:center
+}
+
+.fin{
+  font-size:1.4rem;
+  font-style:italic
+}
+
+.sig{
+  font-size:clamp(1.5rem,6.5vw,2.4rem);
+  letter-spacing:.14em;
+  line-height:1.4;
+  color:var(--g);
+  text-shadow:0 0 28px rgba(243,201,105,.55);
+  margin-top:1rem
+}
+
+@media(prefers-reduced-motion:reduce){
+
+  .rv{
+    transition-duration:.01s;
+    transition-delay:0s!important;
+    filter:none
+  }
+
+  *{
+    animation:none!important
+  }
+
+}
+</style>
+</head>
+
+<body>
+
+<script>
+/* =====================================================
+   ✦ EDIT YOUR CONTENT HERE
+   ===================================================== */
+
+const SITE_DATA = {
+
+  /* PASSWORD */
+  password: "24-04-2009",
+
+  /* HER NAME */
+  name: "TRISHA",
+
+  /* =====================================================
+     CHAPTER 01 — THE GIRL
+     ===================================================== */
+
+  girl: [
+
+    ["The way you care",
+     "Not loudly. Not for credit. Just quietly, the way some people simply do."],
+
+    ["The way people feel heard",
+     "When you listen, it doesn't feel like someone waiting for their turn. It feels like being allowed to exist out loud."],
+
+    ["The little things you remember",
+     "A detail, a phrase, a mood. You hold what others let slip, and somehow it makes them feel seen."],
+
+    ["Ordinary moments, made meaningful",
+     "Nothing about a normal day changes. And yet it feels different with you in it."],
+
+    ["The warmth you carry",
+     "You never announce it. People just notice they feel less cold around you."],
+
+    ["The care you never mention",
+     "Some of the kindest things you do probably never register to you as kindness."],
+
+    ["You, specifically",
+     "There is no copy of the way you are. That matters more than you'd guess."]
+  ],
+
+
+  /* =====================================================
+     CHAPTER 03 — THE FRIEND
+     ===================================================== */
+
+  friend: [
+
+    {
+      title: "A memory worth keeping",
+      text: "Write something small that happened between you two."
+    },
+
+    {
+      title: "A conversation I still think about",
+      text: "Replace this with the real moment."
+    },
+
+    {
+      title: "The day it felt like home",
+      text: "Replace this with your own words."
+    }
+
+  ],
+
+
+  /* =====================================================
+     CHAPTER 04 — THE PERSON
+     ===================================================== */
+
+  qualities: [
+
+    {
+      t:"Kindness",
+      text:"You don't always notice how much kindness you carry.\nSometimes it's in the smallest things:\nthe way you listen,\nthe way you remember,\nthe way you care."
+    },
+
+    {
+      t:"Empathy",
+      text:"You feel what other people are carrying, even when they say they're fine.\nThat is rare. And it isn't weakness."
+    },
+
+    {
+      t:"Patience",
+      text:"You give people time to become clearer, softer, braver.\nNot everyone gets that from the world."
+    },
+
+    {
+      t:"Strength",
+      text:"Not the loud kind. The kind that keeps showing up, keeps caring, and keeps going on days nobody sees."
+    },
+
+    {
+      t:"Loyalty",
+      text:"When you stay, you actually stay.\nThat kind of steadiness is a quiet gift."
+    },
+
+    {
+      t:"Warmth",
+      text:"Some people light up rooms.\nYou do something gentler:\nyou make them safe to sit in."
+    },
+
+    {
+      t:"Courage",
+      text:"Courage isn't never being afraid.\nIt's caring anyway, trying anyway,\nbeing yourself anyway."
+    },
+
+    {
+      t:"Honesty",
+      text:"You are real with people.\nIn a world of performances, that is a kind of kindness too."
+    },
+
+    {
+      t:"Humour",
+      text:"Your humour doesn't only make people laugh.\nIt makes them lighter."
+    },
+
+    {
+      t:"Understanding",
+      text:"You don't need everything explained before you try to understand.\nYou meet people where they are."
+    }
+
+  ],
+
+
+  /* =====================================================
+     CHAPTER 06 — SEALED LETTERS
+     ===================================================== */
+
+  letters: [
+
+    [
+      "Open when you forget your worth",
+      "Worth was never something you had to earn by being impressive. It lives in how you treat people when nothing is in it for you. By that measure, you were never in doubt."
+    ],
+
+    [
+      "Open when you think you're not enough",
+      "\"Enough\" is a standard invented by a tired mind at 2 a.m. It has no authority. People are not measured against it. They are valued for what they actually are, which is rarely what they fear it is."
+    ],
+
+    [
+      "Open when you feel like nobody notices",
+      "Some people notice quietly and never say so. I am one of them. I have noticed far more than I've ever managed to say."
+    ],
+
+    [
+      "Open when you need to remember who you are",
+      "You are someone who cares, even when it costs you something. Start there. Everything else is just weather."
+    ],
+
+    [
+      "Open when you need a reminder that you matter",
+      "You matter in ways that never show up as events. Not one big moment, but a thousand small ones where someone's day was a little lighter because you were in it."
+    ]
+
+  ],
+
+
+  /* =====================================================
+     CHAPTER 07 — SHAYARI
+     ===================================================== */
+
+  shayari: [
+
+    {
+      title:"✦",
+      text:`Tum chand nahi, chand se bhi haseen lagti ho,
+khamosh raaton mein ek naghme si bajti ho,
+log kehte hain khoobsurti aankhon mein hoti hai,
+shayad isliye tum mujhe har jagah nazar aati ho.`
+    },
+
+    {
+      title:"✦",
+      text:`Tumhari muskurahat mein ajeeb sa noor hai,
+jaise andheri raat mein chaand ka suroor hai,
+lafz kam pad jaate hain tumhe bayaan karne mein,
+shayad tumhara hona hi apne aap mein mashhoor hai.`
+    },
+
+    {
+      title:"✦",
+      text:`Na tumhe chaand kahun, na sitara kahun,
+kaise tumhe chand lafzon mein dobara kahun,
+tum toh woh ehsaas ho jo lafzon se pare hai,
+main jitna tumhe likhun, utna hi kam tumhe kahun.`
+    },
+
+    {
+      title:"✦",
+      text:`Kabhi shaam ki thandak, kabhi subah ki roshni ho,
+kabhi khamosh dua, kabhi dil ki bandagi ho,
+samajh nahi aata tumhe kis naam se pukaarun,
+tum ek naam nahi… meri har achhi si zindagi ho.`
+    },
+
+    {
+      title:"✦",
+      text:`Jo baat sitaron mein hai, woh tumhari aankhon mein hai,
+jo sukoon bahaaron mein hai, woh tumhari baaton mein hai,
+kaise kahun tum mere liye kya ho,
+meri har khoobsurat dua ke alfaazon mein ho.`
+    }
+
+  ]
+
+};
+
+/* ================= END OF EDIT AREA ================= */
+</script>
+
+
+<canvas id="bg"></canvas>
+<div id="cur"></div>
+
+
+<!-- PASSWORD GATE -->
+
+<div id="gate" class="ov">
+
+  <div class="cap">Private</div>
+
+  <h1 style="font-size:clamp(1.7rem,7vw,2.8rem)">
+    MY CONSTELLATION<br>
+    WITH A GOLDEN HEARTT ✦
+  </h1>
+
+  <input
+    id="pw"
+    type="text"
+    inputmode="numeric"
+    autocomplete="off"
+    placeholder="DD-MM-YYYY"
+    aria-label="Password"
+  >
+
+  <button class="btn" id="go">
+    UNLOCK
+  </button>
+
+  <div id="er"></div>
+
+</div>
+
+
+<!-- INTRO -->
+
+<div id="intro" class="ov out">
+
+  <div class="cap" id="for"></div>
+
+  <h1>
+    THERE AREN'T ENOUGH WORDS FOR YOU.
+  </h1>
+
+  <p>
+    I tried to find the right words for you.<br>
+    I couldn't.<br>
+    So I made this instead.
+  </p>
+
+  <button class="btn" id="enter">
+    ENTER ✦
+  </button>
+
+</div>
+
+
+<!-- PROGRESS -->
+
+<div id="pg">
+
+  <div class="cap" id="pl"></div>
+
+  <div id="tk"></div>
+
+</div>
+
+
+<main id="main" hidden>
+
+
+<!-- =====================================================
+     CHAPTER 01
+     ===================================================== -->
+
+<section class="ch" id="c1">
+
+  <p class="hw rv">
+    She is not a description. She is a feeling.
+  </p>
+
+  <div
+    id="girl"
+    class="seq"
+    data-s=".22"
+    style="display:grid;gap:.7rem"
+  ></div>
+
+  <p
+    class="hw rv"
+    style="text-align:center"
+  >
+    tap each one
+  </p>
+
+</section>
+
+
+<!-- =====================================================
+     CHAPTER 02
+     ===================================================== -->
+
+<section class="ch" id="c2">
+
+  <div
+    class="seq"
+    data-s="1.4"
+    style="display:grid;gap:1.1rem"
+  >
+
+    <p class="rv">
+      I may never know every sacrifice you've made,<br>
+      every quiet thing you've done,<br>
+      or every moment you've chosen to care without being noticed.
+    </p>
+
+    <p class="big rv">
+      But I know this:
+    </p>
+
+    <p
+      class="big rv"
+      style="color:var(--g)"
+    >
+      The goodness you carry doesn't suddenly appear when someone is watching.
+    </p>
+
+    <p class="rv">
+      Some things aren't decided in front of people.
+      They are built in the unseen hours,
+      in small choices,
+      over and over,
+      until they become who someone is.
+    </p>
+
+    <svg
+      class="rv"
+      viewBox="0 0 200 140"
+      aria-hidden="true"
+      style="width:min(260px,70%);margin:.5rem auto 0"
+    >
+
+      <circle
+        cx="100"
+        cy="70"
+        r="52"
+        fill="none"
+        stroke="rgba(185,166,255,.25)"
+        stroke-dasharray="2 5"
+      />
+
+      <circle
+        cx="100"
+        cy="70"
+        r="30"
+        fill="none"
+        stroke="rgba(243,201,105,.18)"
+      />
+
+      <g class="orb">
+
+        <circle
+          cx="100"
+          cy="18"
+          r="2.5"
+          fill="#b9a6ff"
+        />
+
+        <circle
+          cx="152"
+          cy="70"
+          r="2"
+          fill="#ffb6d5"
+        />
+
+        <circle
+          cx="60"
+          cy="108"
+          r="2.2"
+          fill="#b9a6ff"
+        />
+
+      </g>
+
+      <circle
+        class="pu"
+        cx="100"
+        cy="70"
+        r="7"
+        fill="#f3c969"
+      />
+
+    </svg>
+
+    <p
+      class="hw rv"
+      style="text-align:center"
+    >
+      some light is made far from the spotlight
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     CHAPTER 03
+     ===================================================== -->
+
+<section class="ch" id="c3">
+
+  <div
+    class="seq"
+    data-s="1.3"
+    style="display:grid;gap:1rem"
+  >
+
+    <p class="big rv">
+      Some people become friends.<br>
+      Some people slowly become a place that feels like home.
+    </p>
+
+    <p class="rv">
+      Someone who is there.
+      Someone who listens.
+      Someone who remembers the small things.
+    </p>
+
+    <p class="rv">
+      Someone who makes you feel a little less alone just by being in the conversation.
+      Someone you trust without having to decide to.
+    </p>
+
+    <p class="rv">
+      And the small talks,
+      the ones you'd never think to call important,
+      turn out to be the ones you keep.
+    </p>
+
+    <p
+      class="rv"
+      style="color:var(--g)"
+    >
+      Somewhere along the way,
+      your presence changed my days.
+      I don't know exactly when.
+      I only know they're different now.
+    </p>
+
+  </div>
+
+  <div
+    id="fr"
+    class="seq"
+    data-s=".5"
+    style="display:grid;gap:.7rem;margin-top:.8rem"
+  ></div>
+
+</section>
+
+
+<!-- =====================================================
+     CHAPTER 04
+     ===================================================== -->
+
+<section class="ch" id="c4">
+
+  <p
+    class="rv"
+    style="text-align:center"
+  >
+    Every star is something that makes her her.
+  </p>
+
+  <svg
+    id="qs"
+    class="sky rv"
+    viewBox="0 0 320 370"
+    aria-label="Constellation of qualities"
+  ></svg>
+
+  <div
+    id="qc"
+    class="gl card"
+  >
+    <p style="font-style:italic">
+      Touch a star.
+    </p>
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     CHAPTER 05
+     ===================================================== -->
+
+<section class="ch" id="c5">
+
+  <div
+    class="gl mir seq"
+    data-s="2.2"
+  >
+
+    <p class="big rv">
+      You know the version of yourself you criticize.
+    </p>
+
+    <p class="big rv">
+      I wish you could see the version other people get to experience.
+    </p>
+
+    <p
+      class="mi rv"
+      data-x="1"
+    >
+      Someone worth listening to.
+    </p>
+
+    <p class="mi rv">
+      Someone worth remembering.
+    </p>
+
+    <p class="mi rv">
+      Someone worth being grateful for.
+    </p>
+
+    <p class="mi rv">
+      Someone whose presence matters.
+    </p>
+
+    <p class="mi rv">
+      Someone whose existence makes a difference.
+    </p>
+
+    <p
+      class="mi rv"
+      data-x="1.2"
+      style="color:var(--g);font-size:1.6rem"
+    >
+      Someone far more precious than she sometimes believes.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     CHAPTER 06
+     ===================================================== -->
+
+<section class="ch" id="c6">
+
+  <p class="rv">
+    Things that were too big for a normal conversation.
+  </p>
+
+  <div
+    id="lts"
+    class="seq"
+    data-s=".3"
+    style="display:grid;gap:.8rem"
+  ></div>
+
+</section>
+
+
+<!-- =====================================================
+     CHAPTER 07 — SHAYARI
+     ===================================================== -->
+
+<section class="ch" id="c7">
+
+  <div
+    class="seq"
+    data-s="1.1"
+    style="display:grid;gap:1.4rem"
+  >
+
+    <p
+      class="rv"
+      style="text-align:center;font-style:italic;color:var(--l)"
+    >
+      Some feelings refuse to fit inside ordinary sentences.
+    </p>
+
+    <p
+      class="big rv"
+      style="text-align:center;color:var(--g)"
+    >
+      So I gave them a little poetry.
+    </p>
+
+  </div>
+
+  <div
+    id="sh"
+    class="seq"
+    data-s=".8"
+    style="display:grid;gap:1.2rem;margin-top:1rem"
+  ></div>
+
+  <p
+    class="hw rv"
+    style="text-align:center;margin-top:.8rem"
+  >
+    for the girl who somehow makes words feel insufficient ✦
+  </p>
+
+</section>
+
+
+<!-- =====================================================
+     CHAPTER 08
+     ===================================================== -->
+
+<section class="ch" id="c8">
+
+  <div
+    class="seq"
+    data-s="2.6"
+    style="display:grid;gap:1.6rem"
+  >
+
+    <p class="fin rv">
+      I started making this because I wanted to explain why you're precious to me.
+    </p>
+
+    <p class="fin rv">
+      I tried describing you as a girl.<br>
+      Then as a daughter.<br>
+      Then as a friend.<br>
+      Then simply as a person.
+    </p>
+
+    <p class="fin rv">
+      And somehow…
+    </p>
+
+    <p class="fin rv">
+      I still don't think I've managed to explain it.
+    </p>
+
+    <p
+      class="big rv"
+      data-x="1.5"
+    >
+      Maybe some people are simply too good<br>
+      to fit into a paragraph.
+    </p>
+
+    <p
+      class="big rv"
+      data-x="2.5"
+      style="color:var(--g)"
+    >
+      You're one of them.
+    </p>
+
+    <p
+      class="sig rv"
+      data-x="3"
+    >
+      MY CONSTELLATION<br>
+      WITH A GOLDEN HEARTT ✦
+    </p>
+
+  </div>
+
+</section>
+
+
+</main>
+
+
+<script>
+
+const D = SITE_DATA,
+      $ = s => document.querySelector(s),
+      $$ = s => [...document.querySelectorAll(s)];
+
+const mk = (t,c,h) => {
+  const e = document.createElement(t);
+  e.className = c;
+  e.innerHTML = h;
+  return e;
+};
+
+
+/* =====================================================
+   CHAPTER LIST
+   ===================================================== */
+
+const L = [
+  "01 — THE GIRL",
+  "02 — THE DAUGHTER",
+  "03 — THE FRIEND",
+  "04 — THE PERSON",
+  "05 — WHAT SHE DOESN'T SEE",
+  "06 — THE THINGS I COULDN'T SAY",
+  "07 — WORDS THAT COULDN'T STAY UNSAID",
+  "08 — I STILL HAVEN'T SAID IT"
+];
+
+const norm = s =>
+  s.trim().replace(/[\/.\s]+/g,'-');
+
+$('#for').textContent = 'for ' + D.name;
+
+
+/* =====================================================
+   BACKGROUND STARS
+   ===================================================== */
+
+const cv = $('#bg'),
+      x = cv.getContext('2d');
+
+let W,H,S=[];
+
+function rs(){
+
+  W = cv.width = innerWidth;
+  H = cv.height = innerHeight;
+  S = [];
+
+  const n = Math.min(
+    1400,
+    W * H / 1100 | 0
+  );
+
+  for(let i=0;i<n;i++){
+
+    const r = Math.random();
+
+    S.push({
+      x:Math.random()*W,
+      y:Math.random()*H,
+      r:Math.random()*1.1+.2,
+      t:Math.random()*6,
+      l:r<.3?.06:r<.6?.03:.012,
+      v:r<.08?.012:0,
+      c:
+        r<.12
+        ? '243,201,105'
+        : r<.26
+        ? '185,166,255'
+        : r<.32
+        ? '255,182,213'
+        : '255,255,255'
+    });
+
+  }
+
+}
+
+function dr(t){
+
+  x.clearRect(0,0,W,H);
+
+  for(const s of S){
+
+    const y =
+      ((s.y-scrollY*s.l*3-t*s.v)%H+H)%H;
+
+    x.globalAlpha =
+      .3+.7*Math.abs(
+        Math.sin(t/1700+s.t)
+      );
+
+    x.fillStyle =
+      'rgb('+s.c+')';
+
+    x.beginPath();
+
+    x.arc(
+      s.x,
+      y,
+      s.r,
+      0,
+      7
+    );
+
+    x.fill();
+
+  }
+
+  requestAnimationFrame(dr);
+
+}
+
+rs();
+
+addEventListener('resize',rs);
+
+requestAnimationFrame(dr);
+
+
+/* =====================================================
+   CURSOR GLOW
+   ===================================================== */
+
+if(matchMedia('(pointer:fine)').matches){
+
+  const c = $('#cur');
+
+  c.style.display='block';
+
+  addEventListener(
+    'pointermove',
+    e=>{
+      c.style.left=e.clientX+'px';
+      c.style.top=e.clientY+'px';
+    }
+  );
+
+}
+
+
+/* =====================================================
+   PASSWORD + INTRO
+   ===================================================== */
+
+function unlock(){
+
+  if(
+    norm($('#pw').value) ===
+    norm(D.password)
+  ){
+
+    $('#gate').classList.add('out');
+
+    setTimeout(
+      ()=>$('#intro').classList.remove('out'),
+      700
+    );
+
+  }
+
+  else{
+
+    $('#er').textContent =
+      "That isn't it. Try again.";
+
+    const g = $('#pw');
+
+    g.classList.remove('shake');
+
+    void g.offsetWidth;
+
+    g.classList.add('shake');
+
+  }
+
+}
+
+$('#go').onclick = unlock;
+
+$('#pw').onkeydown = e=>{
+  if(e.key==='Enter') unlock();
+};
+
+$('#enter').onclick = ()=>{
+
+  $('#main').hidden=false;
+
+  scrollTo(0,0);
+
+  $('#intro').classList.add('out');
+
+  $('#pg').classList.add('on');
+
+};
+
+
+/* =====================================================
+   CHAPTER HEADINGS
+   ===================================================== */
+
+const chs = $$('.ch');
+
+chs.forEach((s,i)=>{
+
+  const [n,t] =
+    L[i].split(' — ');
+
+  s.prepend(
+    mk(
+      'div',
+      'rv',
+      '<div class="cap">'+
+      n+
+      '</div><h2>'+
+      t+
+      '</h2>'
+    )
+  );
+
+  if(i<chs.length-1){
+
+    const b =
+      mk(
+        'button',
+        'more',
+        'continue ↓'
+      );
+
+    b.onclick =
+      ()=>chs[i+1].scrollIntoView();
+
+    s.append(b);
+
+  }
+
+  s.dataset.i=i;
+
+});
+
+$('#tk').innerHTML =
+  L.map(
+    ()=>'<i></i>'
+  ).join('');
+
+
+/* =====================================================
+   CHAPTER 01
+   ===================================================== */
+
+D.girl.forEach(([a,b])=>{
+
+  const e =
+    mk(
+      'button',
+      'gl gc rv',
+      '<b>'+a+
+      '</b><span>'+
+      b+
+      '</span>'
+    );
+
+  e.onclick =
+    ()=>e.classList.toggle('open');
+
+  $('#girl').append(e);
+
+});
+
+
+/* =====================================================
+   CHAPTER 03
+   ===================================================== */
+
+D.friend.forEach(m=>{
+
+  $('#fr').append(
+
+    mk(
+      'div',
+      'gl rv',
+      '<b style="color:var(--g);font-weight:500">'+
+      m.title+
+      '</b><p>'+
+      m.text+
+      '</p>'
+    )
+
+  );
+
+});
+
+
+/* =====================================================
+   CHAPTER 06
+   ===================================================== */
+
+D.letters.forEach(([a,b])=>{
+
+  const e =
+    mk(
+      'div',
+      'gl lt rv',
+      '<button><i>✦</i><span>'+
+      a+
+      '</span></button><p>'+
+      b+
+      '</p>'
+    );
+
+  e.firstChild.onclick =
+    ()=>e.classList.toggle('open');
+
+  $('#lts').append(e);
+
+});
+
+
+/* =====================================================
+   CHAPTER 07 — SHAYARI
+   ===================================================== */
+
+D.shayari.forEach((s,i)=>{
+
+  const e =
+    mk(
+      'div',
+      'shayari-card rv',
+      `
+        <div class="shayari-star">
+          ${s.title}
+        </div>
+
+        <div class="shayari-number">
+          ${String(i+1).padStart(2,'0')}
+        </div>
+
+        <p>
+          ${s.text.replace(/\n/g,'<br>')}
+        </p>
+
+        <div class="shayari-line">
+          ✦
+        </div>
+      `
+    );
+
+  $('#sh').append(e);
+
+});
+
+
+/* =====================================================
+   CONSTELLATIONS
+   ===================================================== */
+
+const NS =
+  'http://www.w3.org/2000/svg';
+
+function sky(
+  svg,
+  pts,
+  edges,
+  names,
+  show
+){
+
+  let h =
+    edges.map(
+      ([a,b],k)=>
+        '<line class="ln" id="'+
+        svg.id+
+        'e'+
+        k+
+        '" x1="'+
+        pts[a][0]+
+        '" y1="'+
+        pts[a][1]+
+        '" x2="'+
+        pts[b][0]+
+        '" y2="'+
+        pts[b][1]+
+        '"/>'
+    ).join('');
+
+  h +=
+    pts.map(
+      (p,i)=>
+        '<g class="st" tabindex="0" role="button" aria-label="'+
+        names[i]+
+        '" data-i="'+
+        i+
+        '">'+
+
+        '<circle cx="'+
+        p[0]+
+        '" cy="'+
+        p[1]+
+        '" r="20" fill="transparent"/>'+
+
+        '<circle class="sd" cx="'+
+        p[0]+
+        '" cy="'+
+        p[1]+
+        '" r="4.5"/>'+
+
+        (
+          names[i].length<16
+          ?
+          '<text x="'+
+          p[0]+
+          '" y="'+
+          (p[1]+18)+
+          '">'+
+          names[i]+
+          '</text>'
+          :
+          ''
+        )+
+
+        '</g>'
+    ).join('');
+
+  svg.innerHTML=h;
+
+  const lit=new Set();
+
+  const go=g=>{
+
+    if(!g)return;
+
+    const i=+g.dataset.i;
+
+    lit.add(i);
+
+    g.classList.add('lit');
+
+    edges.forEach(
+      ([a,b],k)=>{
+
+        if(
+          lit.has(a)&&
+          lit.has(b)
+        ){
+
+          $(
+            '#'+
+            svg.id+
+            'e'+
+            k
+          ).classList.add('on');
+
+        }
+
+      }
+    );
+
+    show(i);
+
+  };
+
+  svg.onclick=e=>
+    go(e.target.closest('.st'));
+
+  svg.onkeydown=e=>{
+
+    if(
+      e.key==='Enter'||
+      e.key===' '
+    ){
+
+      e.preventDefault();
+
+      go(
+        e.target.closest('.st')
+      );
+
+    }
+
+  };
+
+}
+
+
+function fill(el,html){
+
+  el.style.opacity=0;
+
+  setTimeout(()=>{
+
+    el.innerHTML=html;
+
+    el.style.opacity=1;
+
+  },200);
+
+}
+
+
+/* =====================================================
+   QUALITIES CONSTELLATION
+   ===================================================== */
+
+const QP = [
+  [160,30],
+  [70,85],
+  [250,75],
+  [120,145],
+  [210,150],
+  [50,215],
+  [270,220],
+  [150,265],
+  [85,330],
+  [235,335]
+];
+
+const QE = [
+  [0,1],
+  [0,2],
+  [1,3],
+  [2,4],
+  [3,4],
+  [3,5],
+  [4,6],
+  [3,7],
+  [4,7],
+  [7,8],
+  [7,9]
+];
+
+const Q =
+  D.qualities.slice(
+    0,
+    QP.length
+  );
+
+sky(
+  $('#qs'),
+  QP.slice(0,Q.length),
+  QE.filter(
+    ([a,b])=>
+      a<Q.length &&
+      b<Q.length
+  ),
+  Q.map(q=>q.t),
+
+  i=>
+    fill(
+      $('#qc'),
+      '<h3>'+
+      Q[i].t+
+      '</h3><p>'+
+      Q[i].text.replace(
+        /\n/g,
+        '<br>'
+      )+
+      '</p>'
+    )
+);
+
+
+/* =====================================================
+   REVEAL ANIMATIONS
+   ===================================================== */
+
+$$('.seq').forEach(s=>{
+
+  let t=0;
+
+  const st=
+    +s.dataset.s||1.2;
+
+  $$('.rv',s).forEach(e=>{
+
+    t+=
+      +e.dataset.x||0;
+
+    e.style.transitionDelay=
+      t+'s';
+
+    t+=st;
+
+  });
+
+});
+
+
+const rio =
+  new IntersectionObserver(
+    es=>
+      es.forEach(e=>{
+
+        if(e.isIntersecting){
+
+          e.target.classList.add('in');
+
+          $$('.rv',e.target)
+            .forEach(
+              c=>c.classList.add('in')
+            );
+
+          rio.unobserve(e.target);
+
+        }
+
+      }),
+    {
+      threshold:.15
+    }
+  );
+
+
+$$('.rv').forEach(e=>{
+
+  if(!e.closest('.seq'))
+    rio.observe(e);
+
+});
+
+$$('.seq').forEach(
+  e=>rio.observe(e)
+);
+
+
+/* =====================================================
+   PROGRESS INDICATOR
+   ===================================================== */
+
+const pio =
+  new IntersectionObserver(
+    es=>
+      es.forEach(e=>{
+
+        if(e.isIntersecting){
+
+          const i=
+            +e.target.dataset.i;
+
+          $('#pl').textContent=L[i];
+
+          $$('#tk i').forEach(
+            (t,j)=>
+              t.classList.toggle(
+                'a',
+                j<=i
+              )
+          );
+
+        }
+
+      }),
+    {
+      threshold:.4
+    }
+  );
+
+
+chs.forEach(
+  c=>pio.observe(c)
+);
+
+</script>
+
+</body>
+</html>
